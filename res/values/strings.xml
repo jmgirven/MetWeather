@@ -1,0 +1,46 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Titles -->
+    <string name="app_name">MetWeather</string>
+    <string name="title_bramble">Bramblemet</string>
+    <string name="title_camber">Cambermet</string>
+    <string name="title_chi">Chimet</string>
+    <string name="title_soton">Sotonmet</string>
+    <string name="title_fullscreen_image">Zoom</string>
+    <string name="title_about">About Us</string>
+    
+    <!-- Menus -->
+    <string name="refresh_image">Refresh</string>
+    
+    <!-- Other strings -->
+    <string name="none"></string>
+    <string name="dialog_enable_internet">An internet connection is required before continuing.</string>
+    <string name="dialog_positive">WiFi Settings</string>
+    <string name="dialog_negative">Cancel</string>
+    <string name="aboutText">
+        <![CDATA[This app was developed as a fun and educational project. All the data
+		included are simply stripped from one of the following
+        websites:\n\nwww.bramblemet.co.uk,\nwww.cambermet.co.uk,\nwww.chimet.co.uk
+        or\nwww.sotonmet.co.uk.\n\nThe data are therefore subject to their copyrights
+        (Chimet Support Group 1999-2012) and disclaimers. The author has just reformatted
+        the information such that it is easy and convenient to use on an android device.]]>
+    </string>
+    
+    <!-- Tags -->
+    <item type="id" name="refresh" />
+    <item type="id" name="about_app" />
+    
+    <item type="id" name="GetWebpageInfoURL" />
+    <item type="id" name="GetWebpageInfoStart" />
+    <item type="id" name="GetWebpageInfoEnd" />
+    <item type="id" name="GetWebpageInfoType" />
+    <item type="id" name="GetWebpageInfoText" />
+    
+    <item type="id" name="DownloadImageTask_url" />
+    <item type="id" name="DownloadImageTask_width" />
+    <item type="id" name="DownloadImageTask_height" />
+    
+    <item type="id" name="SitePosition" />
+    <item type="id" name="FragmentPosition" />
+
+</resources>

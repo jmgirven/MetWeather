@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wind_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    
+	    <ImageView 
+	        android:id="@+id/wind_image_ws"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="4dp"
+	        android:contentDescription="@string/none" />
+	    
+	    <ImageView 
+	        android:id="@+id/wind_image_wd"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="4dp"
+	        android:contentDescription="@string/none" />
+	    
+	</LinearLayout>
+
+</ScrollView>

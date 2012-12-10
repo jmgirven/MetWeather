@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+	<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+	    android:orientation="vertical" >
+    
+	    <TextView style="@style/majorTitle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Sea" />
+
+	    <include layout="@layout/fragment_sea"
+	        android:id="@+id/sea_SA_fragment"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" />
+	    
+    </LinearLayout>
+    
+	<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+	    android:orientation="vertical" >
+    
+	    <TextView style="@style/majorTitle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Atmospheric" />
+    
+	    <include layout="@layout/fragment_atmospheric"
+	        android:id="@+id/atmospheric_SA_fragment"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" />
+	    
+    </LinearLayout>
+    
+</LinearLayout>

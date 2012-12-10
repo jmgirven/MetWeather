@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Main Holder -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/summary_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <!-- Wind Segment -->
+    <LinearLayout
+	    android:id="@+id/summary_wind"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+	    
+        <TextView style="@style/minorTitle"
+            android:id="@+id/summary_wind_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wind Conditions" />
+    
+        <!-- Split of wind content and wind image -->
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+
+	        <TextView
+	            android:id="@+id/summary_wind_blurb"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Mean Speed:\t\nHighest Gust:\t\nDirection:\t\n" />
+
+	        <TextView
+	            android:id="@+id/summary_wind_content"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="" />
+	        
+	        <ImageView
+			    android:id="@+id/summary_wind_image"
+			    android:layout_width="60dp"
+			    android:layout_height="60dp"
+			    android:layout_marginTop="4dp"
+			    android:layout_marginBottom="4dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="20dp"
+			    android:contentDescription="Wind Direction" />
+    
+		</LinearLayout>
+    
+	</LinearLayout>
+	
+    
+    <!-- Sea Segment -->
+    <LinearLayout
+	    android:id="@+id/summary_sea"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+        <TextView style="@style/minorTitle"
+            android:id="@+id/summary_sea_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sea Conditions" />
+        
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+        
+	        <TextView
+	            android:id="@+id/summary_sea_blurb"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Tidal Height:\t\nWave Height (Mean):\t\nWave Height (Maximum):\t\nWave Periodicity:\t\n" />
+        
+	        <TextView
+	            android:id="@+id/summary_sea_content"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="" />
+    
+		</LinearLayout>
+        
+    </LinearLayout>
+    
+    
+    <!-- Atmospheric Segment -->
+    <LinearLayout
+	    android:id="@+id/summary_atmo"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+        <TextView style="@style/minorTitle"
+            android:id="@+id/summary_atmo_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atmospheric Conditions" />
+        
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+        
+	        <TextView
+	            android:id="@+id/summary_atmo_blurb"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Air Temperature:\nSea Temperature:\nBarometric Pressure:\nVisibility:\n" />
+        
+	        <TextView
+	            android:id="@+id/summary_atmo_content"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="" />
+    
+		</LinearLayout>
+        
+    </LinearLayout>
+    
+</LinearLayout>

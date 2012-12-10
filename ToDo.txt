@@ -1,0 +1,18 @@
+Zoom limits
+Splash screen
+First time help
+-- Gingerbread refresh button
+
+Setup layouts dynamically
+Only load images from cache if younger than 5 mins
+Switch SummaryWindFragment+ to fragments inside fragment
+
+
+
+
+?Landscape WindFragment+ fill screen?
+?More info on about / disclaimer page?
+?GridView/RelativeLayout on SummaryFragment?
+?Mini summary on home page?
+?Move refresh button to action bar?
+

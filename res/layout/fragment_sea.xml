@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sea_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    
+		<ImageView
+		    android:id="@+id/sea_image_tide"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="4dp"
+		    android:contentDescription="Tidal Height" />
+	    
+		<ImageView
+		    android:id="@+id/sea_image_wave"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="4dp"
+		    android:contentDescription="Wave Height" />
+	    
+		<ImageView
+		    android:id="@+id/sea_image_peri"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="4dp"
+		    android:contentDescription="Periodicity" />
+	
+	</LinearLayout>
+
+</ScrollView>
