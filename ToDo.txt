@@ -1,5 +1,5 @@
-Zoom limits
-Splash screen
+-- Zoom limits
+-- Splash screen
 First time help
 -- Gingerbread refresh button
 

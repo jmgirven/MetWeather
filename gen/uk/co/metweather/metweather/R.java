@@ -21,6 +21,7 @@ public final class R {
         public static final int ic_menu_refresh=0x7f020002;
         public static final int icon=0x7f020003;
         public static final int map=0x7f020004;
+        public static final int splash_screen=0x7f020005;
     }
     public static final class id {
         public static final int DownloadImageTask_height=0x7f060009;
@@ -53,6 +54,7 @@ public final class R {
         public static final int sea_image_wave=0x7f060015;
         public static final int site_list=0x7f06002d;
         public static final int site_list_image=0x7f06002e;
+        public static final int splash_image=0x7f06002f;
         public static final int summary_SW_fragment=0x7f060027;
         public static final int summary_atmo=0x7f060026;
         public static final int summary_atmo_blurb=0x7f060023;
@@ -80,7 +82,7 @@ public final class R {
         public static final int fragment_sea=0x7f030003;
         public static final int fragment_sea_atmospheric=0x7f030004;
         public static final int fragment_sea_atmospheric_land=0x7f030005;
-        public static final int fragment_summary=0x7f03000e;
+        public static final int fragment_summary=0x7f03000f;
         public static final int fragment_summary_twopanes=0x7f030006;
         public static final int fragment_summary_vertical=0x7f030007;
         public static final int fragment_summary_wind=0x7f030008;
@@ -89,6 +91,7 @@ public final class R {
         public static final int full_screen_image_activity=0x7f03000b;
         public static final int site_list=0x7f03000c;
         public static final int site_list_land=0x7f03000d;
+        public static final int splash_screen=0x7f03000e;
     }
     public static final class string {
         public static final int aboutText=0x7f05000c;
@@ -112,10 +115,11 @@ public final class R {
         public static final int title_soton=0x7f050004;
     }
     public static final class style {
-        public static final int AppTheme=0x7f070000;
-        public static final int ConditionsActivity=0x7f070002;
-        public static final int SiteList=0x7f070001;
-        public static final int majorTitle=0x7f070003;
-        public static final int minorTitle=0x7f070004;
+        public static final int AppTheme=0x7f070001;
+        public static final int ConditionsActivity=0x7f070003;
+        public static final int SiteList=0x7f070002;
+        public static final int SplashTheme=0x7f070000;
+        public static final int majorTitle=0x7f070004;
+        public static final int minorTitle=0x7f070005;
     }
 }
