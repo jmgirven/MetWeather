@@ -2,7 +2,9 @@ package uk.co.metweather.metweather;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -39,6 +41,24 @@ public class FullScreenImageActivity extends Activity {
         		displayDimensions[0],
         		bitmap.getHeight() * displayDimensions[0] / bitmap.getWidth(),
         		false) );
+
+        
+        // First time user help
+        SharedPreferences settings = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        boolean firstrun = settings.getBoolean("firstrun_full", true);
+        
+        if (firstrun) {
+        	AlertDialog.Builder helper = new AlertDialog.Builder(this);
+        	helper.setTitle(R.string.dialog_helper);
+        	helper.setMessage(R.string.dialog_helper_full);
+        	helper.setNeutralButton("OK", null);
+        	helper.show();
+        	
+        	// Save state
+        	SharedPreferences.Editor editor = settings.edit();
+        	editor.putBoolean("firstrun_full", false);
+        	editor.commit();
+        }
     }
     
 

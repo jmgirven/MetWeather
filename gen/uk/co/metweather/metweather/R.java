@@ -94,11 +94,15 @@ public final class R {
         public static final int splash_screen=0x7f03000e;
     }
     public static final class string {
-        public static final int aboutText=0x7f05000c;
+        public static final int aboutText=0x7f050010;
         /**  Titles 
          */
         public static final int app_name=0x7f050000;
         public static final int dialog_enable_internet=0x7f050009;
+        public static final int dialog_helper=0x7f05000c;
+        public static final int dialog_helper_cond=0x7f05000e;
+        public static final int dialog_helper_full=0x7f05000f;
+        public static final int dialog_helper_main=0x7f05000d;
         public static final int dialog_negative=0x7f05000b;
         public static final int dialog_positive=0x7f05000a;
         /**  Other strings 

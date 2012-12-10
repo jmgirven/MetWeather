@@ -1,6 +1,8 @@
 package uk.co.metweather.metweather;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -56,6 +58,24 @@ public class ConditionsActivity extends FragmentActivity {
 		}
 
     	setTitle(ListSites.Sites[inputArgs.getInt(SITE_POSITION)]);
+
+        
+        // First time user help
+        SharedPreferences settings = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        boolean firstrun = settings.getBoolean("firstrun_cond", true);
+        
+        if (firstrun) {
+        	AlertDialog.Builder helper = new AlertDialog.Builder(this);
+        	helper.setTitle(R.string.dialog_helper);
+        	helper.setMessage(R.string.dialog_helper_cond);
+        	helper.setNeutralButton("OK", null);
+        	helper.show();
+        	
+        	// Save state
+        	SharedPreferences.Editor editor = settings.edit();
+        	editor.putBoolean("firstrun_cond", false);
+        	editor.commit();
+        }
     }
 	
 	

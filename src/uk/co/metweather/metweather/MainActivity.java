@@ -1,7 +1,9 @@
 package uk.co.metweather.metweather;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -40,15 +42,35 @@ public class MainActivity extends FragmentActivity {
         ImageView imageView = (ImageView) findViewById(R.id.site_list_image);
         imageView.setImageResource(R.drawable.map);
         
+        // First time user help
+        SharedPreferences settings = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        boolean firstrun = settings.getBoolean("firstrun_main", true);
+        
+        if (firstrun) {
+        	AlertDialog.Builder helper = new AlertDialog.Builder(this);
+        	helper.setTitle(R.string.dialog_helper);
+        	helper.setMessage(R.string.dialog_helper_main);
+        	helper.setNeutralButton("OK", null);
+        	helper.show();
+        	
+        	// Save state
+        	SharedPreferences.Editor editor = settings.edit();
+        	editor.putBoolean("firstrun_main", false);
+        	editor.commit();
+        }
+        
+        // On list clicked
         listView.setOnItemClickListener(new OnItemClickListener() {
         	public void onItemClick(AdapterView<?> parent, View view,
         	        int site_position, long id) {
                 // Test for Internet connection
                 if (!isOnline()) {
+                	// Prompt for Internet access
     	        	FragmentManager fm = getSupportFragmentManager();
     	        	EnableInternetDialogFragment enableInternetDialogFragment = new EnableInternetDialogFragment();
     	        	enableInternetDialogFragment.show(fm, "fragment_enable_internet_dialog");
                 } else {
+                	// Run conditions activity
 			    	Intent myIntent = new Intent(MainActivity.this, ConditionsActivity.class);
 			    	Bundle args = new Bundle();
 			    	args.putInt(ConditionsActivity.SITE_POSITION, site_position);

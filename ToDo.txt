@@ -1,6 +1,6 @@
 -- Zoom limits
 -- Splash screen
-First time help
+-- First time help
 -- Gingerbread refresh button
 
 Setup layouts dynamically

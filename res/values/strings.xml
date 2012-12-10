@@ -14,9 +14,16 @@
     
     <!-- Other strings -->
     <string name="none"></string>
+    
     <string name="dialog_enable_internet">An internet connection is required before continuing.</string>
     <string name="dialog_positive">WiFi Settings</string>
     <string name="dialog_negative">Cancel</string>
+    
+    <string name="dialog_helper">Welcome to MetWeather!</string>
+    <string name="dialog_helper_main">Choose a location.</string>
+    <string name="dialog_helper_cond">Slide left and right between tabs. Click a graph to open zoom mode.</string>
+    <string name="dialog_helper_full">Pinch to zoom.</string>
+    
     <string name="aboutText">
         <![CDATA[This app was developed as a fun and educational project. All the data
 		included are simply stripped from one of the following
