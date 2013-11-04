@@ -50,4 +50,9 @@ public class ListSites {
         "Sea",
         "Atmospheric"
     };
+
+    static String[] ConditionsTwo = {
+        "Summary & Wind",
+        "Sea & Atmospheric"
+    };
 }

@@ -22,7 +22,7 @@ public class ConditionsActivity extends ActionBarActivity {
     final static String FRAGMENT_POSITION = "fragment";
     Bundle inputArgs;
 	
-	private static final int NUM_ITEMS = 4;
+	private static int NUM_ITEMS;
     
 	// Create a ViewPager to hold the fragments
 	// The PagerAdapter deals with changing the fragments
@@ -32,6 +32,8 @@ public class ConditionsActivity extends ActionBarActivity {
 	ViewPager mViewPager;
 	
 	private ActionBar actionBar;
+	
+	private Boolean largeScreen = false;
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +49,13 @@ public class ConditionsActivity extends ActionBarActivity {
         		// && (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
         		) {
             mConditionsPagerAdapter = new ConditionsPagerAdapter_TwoFragments(getSupportFragmentManager());
+            NUM_ITEMS = 2;
+            largeScreen = true;
         } else {
 	        // Adapter to return fragments
 	        mConditionsPagerAdapter = new ConditionsPagerAdapter(getSupportFragmentManager());
+	        NUM_ITEMS = 4;
+	        largeScreen = false;
         }
 
         // Set up the ViewPager with the adapter.
@@ -92,11 +98,21 @@ public class ConditionsActivity extends ActionBarActivity {
 			}
         };
 
-        for (int i = 0; i < NUM_ITEMS; i++) {
-            actionBar.addTab(
-                actionBar.newTab()
-                    .setText(ListSites.Conditions[i])
-                    .setTabListener(tabListener));
+        
+        if (largeScreen) {
+            for (int i = 0; i < NUM_ITEMS; i++) {
+                actionBar.addTab(
+                    actionBar.newTab()
+                        .setText(ListSites.ConditionsTwo[i])
+                        .setTabListener(tabListener));
+            }
+        } else {
+            for (int i = 0; i < NUM_ITEMS; i++) {
+                actionBar.addTab(
+                    actionBar.newTab()
+                        .setText(ListSites.Conditions[i])
+                        .setTabListener(tabListener));
+            }
         }
 
         

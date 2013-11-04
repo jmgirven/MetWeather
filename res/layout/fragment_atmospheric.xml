@@ -13,7 +13,7 @@
 		    android:id="@+id/atmo_image_temp"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:layout_margin="4dp"
+		    android:padding="8dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 		    android:contentDescription="Temperature" />
@@ -22,7 +22,7 @@
 		    android:id="@+id/atmo_image_pres"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:layout_margin="4dp"
+		    android:padding="8dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 		    android:contentDescription="Barometric Pressure" />
@@ -31,7 +31,7 @@
 		    android:id="@+id/atmo_image_vis"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:layout_margin="4dp"
+		    android:padding="8dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 		    android:contentDescription="Visability" />
