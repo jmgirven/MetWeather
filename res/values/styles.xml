@@ -1,26 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <style name="SplashTheme"  parent="android:Theme.NoTitleBar" >
+    
+    <style name="Theme.Metweather" parent="@style/Theme.AppCompat.Light">
+        <item name="actionBarItemBackground">@drawable/selectable_background_metweather</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Metweather</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Metweather</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Metweather</item>
+        <item name="actionBarTabBarStyle">@style/ActionBarTabBarStyle.Tb_action_bar</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Metweather</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Metweather</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_metweather</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_metweather</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Metweather</item>
+        
+    </style>
+    
+    <style name="ActionBar.Solid.Metweather" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="background">@drawable/ab_solid_metweather</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_metweather</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_metweather</item>
+        <item name="progressBarStyle">@style/ProgressBar.Metweather</item>
     </style>
 
-    <style name="AppTheme"  parent="android:Theme.Light" >
+    <style name="ActionBar.Transparent.Metweather" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="background">@drawable/ab_transparent_metweather</item>
+        <item name="progressBarStyle">@style/ProgressBar.Metweather</item>
+    </style>
+        
+    <style name="PopupMenu.Metweather" parent="@style/Widget.AppCompat.Light.PopupMenu">        
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_metweather</item>    
+    </style>
+        
+    <style name="DropDownListView.Metweather" parent="@style/Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_metweather</item>
     </style>
 
-    <style name="SiteList"  parent="AppTheme" >
-        <item name="android:background">@color/mainbackgroundcolor</item>
+    <style name="ActionBarTabStyle.Metweather" parent="@style/Widget.AppCompat.Light.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_metweather</item>
     </style>
 
-    <style name="ConditionsActivity"  parent="AppTheme">
-        <item name="android:background">@color/mainbackgroundcolor</item>
+    <style name="ActionBarTabBarStyle.Tb_action_bar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="showDividers">none</item>
+        <item name="dividerPadding">0dp</item>
+    </style>
+        
+    <style name="DropDownNav.Metweather" parent="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/spinner_background_ab_metweather</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_metweather</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_metweather</item>
+    </style>
+    
+    <style name="ProgressBar.Metweather" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_metweather</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.Metweather" parent="@style/Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_metweather</item>
+    </style>
+    
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Metweather.Widget" parent="@style/Theme.AppCompat">
+        <item name="popupMenuStyle">@style/PopupMenu.Metweather</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Metweather</item>
     </style>
 
-    <style name="majorTitle"  parent="ConditionsActivity">
+    <style name="majorTitle"  parent="Theme.Metweather">
         <item name="android:background">@color/majorTitleBackgroundColor</item>
         <item name="android:textSize">22sp</item>
     </style>
 
-    <style name="minorTitle"  parent="ConditionsActivity">
+    <style name="minorTitle"  parent="Theme.Metweather">
         <item name="android:background">@color/minorTitleBackgroundColor</item>
         <item name="android:textSize">20sp</item>
     </style>

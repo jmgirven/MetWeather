@@ -6,18 +6,23 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar.Tab;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ConditionsActivity extends FragmentActivity {
+public class ConditionsActivity extends ActionBarActivity {
 	// Initialise list position arguments
     final static String SITE_POSITION = "site";
     final static String FRAGMENT_POSITION = "fragment";
     Bundle inputArgs;
+	
+	private static final int NUM_ITEMS = 4;
     
 	// Create a ViewPager to hold the fragments
 	// The PagerAdapter deals with changing the fragments
@@ -25,7 +30,8 @@ public class ConditionsActivity extends FragmentActivity {
 	// Slider bits
 	ConditionsPagerAdapter mConditionsPagerAdapter;
 	ViewPager mViewPager;
-
+	
+	private ActionBar actionBar;
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,16 @@ public class ConditionsActivity extends FragmentActivity {
         // Set up the ViewPager with the adapter.
         mViewPager = (ViewPager) findViewById(R.id.fragment_container);
         mViewPager.setAdapter(mConditionsPagerAdapter);
+ 
+        // Swipes
+        mViewPager.setOnPageChangeListener(
+			new ViewPager.SimpleOnPageChangeListener() {
+	            @Override
+	            public void onPageSelected(int position) {
+	                getSupportActionBar().setSelectedNavigationItem(position);
+	            }
+			}
+		);
 
         if (savedInstanceState == null) {
         	inputArgs = getIntent().getExtras();
@@ -57,7 +73,31 @@ public class ConditionsActivity extends FragmentActivity {
 			inputArgs = savedInstanceState;
 		}
 
-    	setTitle(ListSites.Sites[inputArgs.getInt(SITE_POSITION)]);
+        actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        // Create a tab listener that is called when the user changes tabs.
+        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+			@Override
+			public void onTabReselected(Tab tab, FragmentTransaction ft) {
+			}
+
+			@Override
+			public void onTabSelected(Tab tab, FragmentTransaction ft) {
+				mViewPager.setCurrentItem(tab.getPosition());
+			}
+
+			@Override
+			public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+			}
+        };
+
+        for (int i = 0; i < NUM_ITEMS; i++) {
+            actionBar.addTab(
+                actionBar.newTab()
+                    .setText(ListSites.Conditions[i])
+                    .setTabListener(tabListener));
+        }
 
         
         // First time user help
@@ -133,18 +173,12 @@ public class ConditionsActivity extends FragmentActivity {
 
         @Override
         public int getCount() {
-            return 4;
+            return NUM_ITEMS;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0: return "Summary";
-                case 1: return "Wind";
-                case 2: return "Sea";
-                case 3: return "Atmospheric";
-            }
-            return null;
+        	return ListSites.Conditions[position];
         }
     }
     

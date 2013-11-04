@@ -3,4 +3,5 @@
     <color name="mainbackgroundcolor">#FFFFE7</color>
     <color name="majorTitleBackgroundColor">#CEF6EC</color>
     <color name="minorTitleBackgroundColor">#E7E7C4</color>
+    <color name="pressed_metweather">#CC33B5E5</color>
 </resources>
