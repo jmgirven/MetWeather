@@ -13,7 +13,7 @@
 	        android:id="@+id/wind_image_ws"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:padding="8dp"
+		    android:padding="30dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 	        android:contentDescription="@string/none" />
@@ -22,7 +22,7 @@
 	        android:id="@+id/wind_image_wd"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:padding="8dp"
+		    android:padding="30dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 	        android:contentDescription="@string/none" />

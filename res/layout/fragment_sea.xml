@@ -13,7 +13,7 @@
 		    android:id="@+id/sea_image_tide"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:padding="8dp"
+		    android:padding="30dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 		    android:contentDescription="Tidal Height" />
@@ -22,7 +22,7 @@
 		    android:id="@+id/sea_image_wave"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:padding="8dp"
+		    android:padding="30dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 		    android:contentDescription="Wave Height" />
@@ -31,7 +31,7 @@
 		    android:id="@+id/sea_image_peri"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:padding="8dp"
+		    android:padding="30dp"
 		    android:adjustViewBounds="true"
 		    android:scaleType="centerCrop"
 		    android:contentDescription="Periodicity" />
