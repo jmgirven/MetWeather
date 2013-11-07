@@ -13,10 +13,14 @@ import java.util.List;
 import java.util.Map;
 
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GetWebpageInfo extends AsyncTask<TextView, Void, TextView[]> {
+
+	private static String TAG = "GetWebpageInfo";
+	
 	// Download the HTML source of a website
 	// Process the text and display in a text view
 	List<String> text = new ArrayList<String>();
@@ -157,11 +161,17 @@ public class GetWebpageInfo extends AsyncTask<TextView, Void, TextView[]> {
 	private String ProcessWind(List<String> text, int start, int end) {
 		String output = "";
 		
-		List<String> result = StripHTML(text, start, end);
+		try {
+			List<String> result = StripHTML(text, start, end);
 		
-		output += result.get(1) + "\n";
-		output += result.get(3) + "\n";
-		output += result.get(5) + "\n";
+			if (result.size() >= 5) {
+				output += result.get(1) + "\n";
+				output += result.get(3) + "\n";
+				output += result.get(5) + "\n";
+			}
+		} catch (Exception e) {
+			Log.e(TAG, "ProcessWind exception: " + e);
+		}
 
 	    return output;
 	}
@@ -169,14 +179,19 @@ public class GetWebpageInfo extends AsyncTask<TextView, Void, TextView[]> {
 	
 	private String ProcessSea(List<String> text, int start, int end) {
 		String output = "";
-		List<String> result = StripHTML(text, start, end);
-		output += result.get(1) + "\n";
 		
-		// Deal with Chimet supplementary information
-		if (result.size() > 2) {
-			output += result.get(2).replace("Wave Height (mean) ", "") + "\n";
-			output += result.get(3).replace("Wave Height (maximum)", "") + "\n";
-			output += result.get(4).replace("Wave Periodicity", "") + "\n";
+		try {
+			List<String> result = StripHTML(text, start, end);
+			output += result.get(1) + "\n";
+			
+			// Deal with Chimet supplementary information
+			if (result.size() > 2) {
+				output += result.get(2).replace("Wave Height (mean) ", "") + "\n";
+				output += result.get(3).replace("Wave Height (maximum)", "") + "\n";
+				output += result.get(4).replace("Wave Periodicity", "") + "\n";
+			}
+		} catch (Exception e) {
+			Log.e(TAG, "ProcessSea exception: " + e);
 		}
 		
 	    return output;
@@ -186,22 +201,26 @@ public class GetWebpageInfo extends AsyncTask<TextView, Void, TextView[]> {
 	private String ProcessAtmo(List<String> text, int start, int end) {
 		String output = "";
 		
-		List<String> result = StripHTML(text, start, end);
-		
-		output += result.get(0).replace("Air", "") + "\n";
-		
-		if (result.get(1).startsWith("Sea")) {
-			output += result.get(1).replace("Sea", "") + "\n";
-		} else {
-			output += "\n" + result.get(1).replace("Barometric Pressure", "") + "\n";
-		}
-		
-		if (result.size() > 2) {
-			output += result.get(2).replace("Barometric Pressure", "") + "\n";
-		}
-		
-		if (result.size() > 3) {
-			output += result.get(3).replace("Visibility", "") + "\n";
+		try {
+			List<String> result = StripHTML(text, start, end);
+			
+			output += result.get(0).replace("Air", "") + "\n";
+			
+			if (result.get(1).startsWith("Sea")) {
+				output += result.get(1).replace("Sea", "") + "\n";
+			} else {
+				output += "\n" + result.get(1).replace("Barometric Pressure", "") + "\n";
+			}
+			
+			if (result.size() > 2) {
+				output += result.get(2).replace("Barometric Pressure", "") + "\n";
+			}
+			
+			if (result.size() > 3) {
+				output += result.get(3).replace("Visibility", "") + "\n";
+			}
+		} catch (Exception e) {
+			Log.e(TAG, "ProcessAtmo exception: " + e);
 		}
 
 	    return output;

@@ -61,16 +61,19 @@ public class ConditionsActivity extends ActionBarActivity {
         // Set up the ViewPager with the adapter.
         mViewPager = (ViewPager) findViewById(R.id.fragment_container);
         mViewPager.setAdapter(mConditionsPagerAdapter);
- 
+        actionBar = getSupportActionBar();
         // Swipes
         mViewPager.setOnPageChangeListener(
 			new ViewPager.SimpleOnPageChangeListener() {
 	            @Override
 	            public void onPageSelected(int position) {
-	                getSupportActionBar().setSelectedNavigationItem(position);
+	                actionBar.setSelectedNavigationItem(position);
 	            }
 			}
 		);
+        
+        
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         if (savedInstanceState == null) {
         	inputArgs = getIntent().getExtras();
@@ -78,9 +81,6 @@ public class ConditionsActivity extends ActionBarActivity {
 		} else {
 			inputArgs = savedInstanceState;
 		}
-
-        actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         // Create a tab listener that is called when the user changes tabs.
         ActionBar.TabListener tabListener = new ActionBar.TabListener() {

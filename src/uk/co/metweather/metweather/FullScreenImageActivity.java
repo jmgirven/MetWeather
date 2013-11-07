@@ -113,13 +113,14 @@ public class FullScreenImageActivity extends Activity {
 			// Modified home button
 			// Returns to ConditionsActivity, passing arguments
 			case android.R.id.home:
-	            myIntent = new Intent(this, ConditionsActivity.class);
-	            myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-	            myIntent.putExtra(ConditionsActivity.SITE_POSITION,
-		    			extras.getInt(ConditionsActivity.SITE_POSITION));
-	            myIntent.putExtra(ConditionsActivity.FRAGMENT_POSITION,
-		    			extras.getInt(ConditionsActivity.FRAGMENT_POSITION));
-	            startActivity(myIntent);
+//	            myIntent = new Intent(this, ConditionsActivity.class);
+//	            myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//	            myIntent.putExtra(ConditionsActivity.SITE_POSITION,
+//		    			extras.getInt(ConditionsActivity.SITE_POSITION));
+//	            myIntent.putExtra(ConditionsActivity.FRAGMENT_POSITION,
+//		    			extras.getInt(ConditionsActivity.FRAGMENT_POSITION));
+//	            startActivity(myIntent);
+				finish();
 	            return true;
 				
 			default:
